@@ -6,13 +6,13 @@
 def upc_check(upc):
     '''(str) || (int) --> (int)
 
-    Given a <= 12 digit upc, return the final check digit that would make a
-    valid UPC-A code. Returns -1 if given upc is has 12 or more digits or
+    Given a < 12 digit upc, return the final check digit that would make a
+    valid UPC-A code. Returns -1 if given upc has 12 or more digits or
     contains a non-numeral.
 
     >>> upc_check(4210000526)
     4
-    >>> upc_check(3600029145)
+    >>> upc_check('3600029145')
     2
     >>> upc_check(12345678910)
     4
@@ -20,7 +20,7 @@ def upc_check(upc):
     0
     >>> upc_check(123456789012)
     -1
-    >>> upc_check(12A456)
+    >>> upc_check('12A456')
     -1
     >>> upc_check(1234567890123)
     -1
